@@ -1,7 +1,5 @@
 spring.application.name: first-service
 
-server:
-  port: 8081
 # Eureka server configuration
 eureka.client:
   register-with-eureka: true
