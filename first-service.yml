@@ -4,3 +4,12 @@ spring:
 
 server:
   port: 8081
+
+
+user-service-modified:
+  ribbon:
+    enabled: false
+
+loadbalancer:
+  client:
+    name: user-service-modified
