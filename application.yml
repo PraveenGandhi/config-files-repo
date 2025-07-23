@@ -1,5 +1,3 @@
-spring.application.name: first-service
-
 # Eureka server configuration
 eureka.client:
   register-with-eureka: true

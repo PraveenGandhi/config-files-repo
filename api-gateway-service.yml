@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-gateway-service
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lowerCaseServiceId: true
+
+          routes:
+            - id: firstService
+              uri: lb://first-service-from-config-files-repo
+              predicates:
+                - Path=/first/**
+              -filters:
+                - StripPrefix=1
+            - id: userService
+              uri: lb://user-service-modified
+              predicates:
+                - Path=/user/**
+              -filters:
+                - StripPrefix=1
+
